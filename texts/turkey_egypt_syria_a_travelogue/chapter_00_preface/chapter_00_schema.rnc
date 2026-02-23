@@ -9,24 +9,26 @@ body = element body {div*}
         head = element head {lg}
             lg = element lg {l}
                 l = element l {text}
-        p = element p { mixed { ( persName | placeName | orgName | roleName | state | seg | date | time | lg | l | language | q | said | event | rs) } }
-                persName = element {text}
-                placeName = 
-                orgName = 
-                roleName = 
-                state = 
-                seg = 
-                date = 
-                time = 
-                lg = 
-                l = 
-                language = 
-                q = 
-                said = 
-                event = element {text}
+        p = element p {s} 
+            s = element s {mixed { ( placeName | date | foreign | title | rs | ref | place | q | persName | district ) } }
+                 placeName = element placeName { mixed { (settlement | bloc | country) } }
+                 date = element date {}
+                 foreign = element foreign {xml:lang}
+                    xml:lang = attribute xml:lang {}
+                 title = element title {level, xml:lang}
+                 rs = element rs {type, ana}
+                    type = attribute type {}
+                    ana = attribute ana {}
+                 ref = element ref {type}
+                    type = attribute type {}
+                 place = element place {type, placeName}
+                 q = element q {}
+                 persName = element persName {}
+                 district = element district {choice}
+                    choice = element choice {orig, reg}
 
 
-
+# add roleName, state, sef, language, said, event tags later
 # empty tags about the page number and corresponding subject?
-# stuff for footnotes etc
+# add stuff for footnotes etc
 
