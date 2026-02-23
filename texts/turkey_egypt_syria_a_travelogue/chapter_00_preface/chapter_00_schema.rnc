@@ -1,0 +1,31 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+start = body
+
+body = element body {div*}
+
+    div = element div {type, n, head}
+        type = attribute type { "chapter" | "section" }
+        n = attribute type {}
+        head = element head {p}
+            p = element p { mixed { ( persName | placeName | orgName | roleName | state | seg | date | time | lg | l | language | q | said | event) } }
+                persName = element {text}
+                placeName = 
+                orgName = 
+                roleName = 
+                state = 
+                seg = 
+                date = 
+                time = 
+                lg = 
+                l = 
+                language = 
+                q = 
+                said = 
+                event = element {text}
+
+
+
+# empty tags about the page number and corresponding subject?
+# stuff for footnotes etc
+
